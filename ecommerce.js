@@ -52,6 +52,8 @@ let cantidadVendidaAhsoka = document.getElementById('cantidadVendidaAhsoka')
 let carritoAhsoka = document.getElementById('carritoAhsoka')
 
 let carritoFinal = document.getElementById('carritoFinal')
+let mostrarTotal = document.getElementById('mostrarTotal')
+let mostrarTotal2 = document.getElementById('mostrarTotal2')
 
 let Sidious = document.getElementById('funkoSidious')
 let Vader = document.getElementById('funkoVader')
@@ -75,18 +77,14 @@ let CantidadVendidaVader = 0;
 let CantidadVendidaMaul = 0;
 
 let vendido = false;
-let total = 0;
 
 // Aqui armo el carrito segun lo que escoja el usuario
 
 class carrito {
     constructor(nombre, precio, unidades) {
         this.nombre  = nombre;
-        this.precio  = parseFloat(precio);
+        this.precio  = parseInt(precio);
         this.unidades = parseInt(unidades)
-    }
-    sumaVenta() {
-        return total = this.unidades * this.precio
     }
 }
 
@@ -120,8 +118,8 @@ function ventaQuigon(){
 
     carritoSuma.push(new carrito(ventaQuigon.nombre, ventaQuigon.precio, ventaQuigon.unidades));
 
-    carritoQuigon.innerHTML = ("El total a pagar por su compra es: $" + ventaFinalQuigon)
-    cantidadVendidaQuigon.innerHTML = ("Quedan " + nuevoStockQuin + " Funkos de Quigon")
+    cantidadVendidaQuigon.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
+    carritoQuigon.innerHTML = ("A pagar por este producto: $" + ventaFinalQuigon)
 }}
 
 Luke.addEventListener('click',ventaLuke)
@@ -145,8 +143,8 @@ function ventaLuke(){
         
     carritoSuma.push(new carrito(ventaLuke.nombre, ventaLuke.precio, ventaLuke.unidades));
 
-    carritoLuke.innerHTML = ("El total a pagar por su compra es: $" + ventaFinalLuke)
-    cantidadVendidaLuke.innerHTML = ("Quedan " + nuevoStockLuke + " Funkos de Luke")
+    cantidadVendidaLuke.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
+    carritoLuke.innerHTML = ("A pagar por este producto: $" + ventaFinalLuke)
 }}
 
 Ahsoka.addEventListener('click', ventaAhsoka)
@@ -169,8 +167,8 @@ function ventaAhsoka(){
         
     carritoSuma.push(new carrito(ventaAhsoka.nombre, ventaAhsoka.precio, ventaAhsoka.unidades));
 
-    carritoAhsoka.innerHTML = ("El total a pagar por su compra es: $" + ventaFinalAhsoka)
-    cantidadVendidaAhsoka.innerHTML = ("Quedan " + nuevoStockAhsoka + " Funkos de Ahsoka")
+    cantidadVendidaAhsoka.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
+    carritoAhsoka.innerHTML = ("A pagar por este producto: $" + ventaFinalAhsoka)
     } 
 }
 
@@ -194,8 +192,8 @@ function ventaSidious(){
         
     carritoSuma.push(new carrito(ventaSidious.nombre, ventaSidious.precio, ventaSidious.unidades));
 
-    carritoSidious.innerHTML = ("El total a pagar por su compra es: $" + ventaFinalSidious)
-    cantidadVendidaSidious.innerHTML = ("Quedan " + nuevoStockSidious + " Funkos de Darth Sidious")
+    cantidadVendidaSidious.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
+    carritoSidious.innerHTML = ("A pagar por este producto: $" + ventaFinalSidious)
     }
 }
 
@@ -219,8 +217,8 @@ function ventaVader(){
         
     carritoSuma.push(new carrito(ventaVader.nombre, ventaVader.precio, ventaVader.unidades));
 
-    carritoVader.innerHTML = ("El total a pagar por su compra es: $" + ventaFinalVader)
-    cantidadVendidaVader.innerHTML = ("Quedan " + nuevoStockVader + " Funkos de Darth Vader")
+    cantidadVendidaVader.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
+    carritoVader.innerHTML = ("A pagar por este producto: $" + ventaFinalVader)
     }
 }
 
@@ -244,27 +242,60 @@ function ventaMaul(){
         
     carritoSuma.push(new carrito(ventaMaul.nombre, ventaMaul.precio, ventaMaul.unidades));
 
-    carritoMaul.innerHTML = ("El total a pagar por su compra es: $" + ventaFinalMaul)
-    cantidadVendidaMaul.innerHTML = ("Quedan " + nuevoStockMaul + " Funkos de Darth Maul")
+    cantidadVendidaMaul.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
+    carritoMaul.innerHTML = ("A pagar por este producto: $" + ventaFinalMaul)
     }
 }
 
 // Muestro lo que lleva el carrito agregado
-// Me falta totalizar este carrito y mostrarlo
 
-console.log(carritoSuma)
+// console.log(carritoSuma)
 
-// Me falta sumar carrito, debo usar un for
+carritoFinal.addEventListener('click',ventaTotal)
 
-// Debo agregar busqueda o filtro
+function ventaTotal(){
+    let sum = 0;
+    for (var i = 0; i < carritoSuma.length; i ++){
+        sum += carritoSuma[i].precio
+    }
+    console.log(sum);
+    mostrarTotal.innerHTML = ("Total a pagar es de $" + sum )
+    mostrarTotal2.innerHTML = ("Haga click aqui para continuar con el pago")
+}
+
+//filtro por precio
+
+
+
+// Busqueda sencilla
 
 const busqueda = document.getElementById("Busqueda")
 busqueda.addEventListener('keypress', buscar)
 
 function buscar(e){
     if(e.keyCode === 13){
-        alert("Toco enter") 
+        let buscar = document.getElementById('Busqueda').value;
+        if(buscar == "Quigon" || buscar == "Luke" || buscar == "Ahsoka" || buscar == "Sidious" || buscar == "Vader" || buscar =="Maul"){
+            alert("Tenemos el producto")
+        } else {
+            alert ("Producto no disponible")
+        }
+        console.log(buscar)
     }
 }
+
+// Login
+
+const $btnSignIn= document.querySelector('.sign-in-btn'),
+      $btnSignUp = document.querySelector('.sign-up-btn'),  
+      $signUp = document.querySelector('.sign-up'),
+      $signIn  = document.querySelector('.sign-in');
+
+document.addEventListener('click', e => {
+    if (e.target === $btnSignIn || e.target === $btnSignUp) {
+        $signIn.classList.toggle('active');
+        $signUp.classList.toggle('active')
+    }
+});
 
 // Falta usar localstorage

@@ -13,9 +13,9 @@
         <header>
             <nav class="grid-container Menu">
                 <p>
-                    <input type="search" class="Busqueda" id = "Busqueda" placeholder="Nombre de funko a buscar">
+                    <input type="search" class="Busqueda" name="Busqueda" id="Busqueda" placeholder="Nombre de funko a buscar">
                 </p>
-                <a href="#Productos-Jedi">Productos</a>
+                <a href="#Productos">Productos</a>
                 <a href="#test-Jedi">Test</a>
                 <a href="#RedesSociales">Redes Sociales</a>
             </nav>
@@ -28,7 +28,7 @@
             </div>
             <h1>Star Wars</h1>
             <div class="Descripcion">
-                Bienvenido a la mejor tienda de coleccionables de esta increible franquicia
+                Bienvenido a la mejor tienda de funkos coleccionables de esta increible franquicia
             </div>
 
             <h2>Funkos Coleccionables</h2>
@@ -36,7 +36,7 @@
                 «Por más de cientos de generaciones, los Caballeros Jedi fueron los guardianes de la paz y la justicia en la Antigua República.»
                 ―Obi-Wan Kenobi
             </article>
-            <section id = "Productos-Jedi" class="Productos-Jedi">
+            <section id = "Productos" class="Productos">
                 <div class="Producto1">
                     <img src="" alt="">
                     <h3>Qui Gon Jinn</h3>
@@ -93,10 +93,10 @@
                 </div>
             </section>
 
-            <article>
+            <article class="Sith-main">
                 «Una vez más los Sith controlarán la galaxia y nos llegará la paz.» ―Darth Sidious a Darth Vader
             </article>
-                <section id = "Productos-Sith" class="Productos-Sith">
+                <section id = "Productos" class="Productos">
                     <div class="Producto4">
                         <img src="" alt="">
                         <h3>Darth Sidious</h3>
@@ -153,7 +153,13 @@
                     </div>
                 </section>
     
-            <section id="carritoFinal"></section>
+                <h3>Carrito de Compras</h3>
+                <p class="final">Solo darle click cuando ya hayas seleccionado todos los productos y estes listo para pagar</p>
+                <section class= "compraFinal">
+                <button class="botonDecoracion" id="carritoFinal">Totalizar</button>
+            </section>
+            <a href="payment.html" class= "mostrarTotal" id="mostrarTotal"></a>
+            <a href="payment.html" class= "mostrarTotal2" id="mostrarTotal2"></a>
         </main>
    
         <section id = "test-Jedi" class="test-Jedi">
