@@ -1,5 +1,9 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 body{
-    background-color: #200328;
+    background: linear-gradient(#0c0524, #38041c);
     color: #fff;
 }
 
@@ -9,32 +13,43 @@ body{
 }
 
 header a{
-    font-family: 'Roboto', sans-serif;
     color: white;
     font-size: 18px;
     text-decoration: none;
     text-transform: uppercase;
     margin-top: 20px;
     padding: 10px;
+    border-radius: 10px;
 }
 
 header a:hover{
-    font-size: 20px;
+    font-size: 18px;
+    box-shadow: 0 0 10px #38041c, 0 0 40px #38041c, 0 0 80px #38041c;
+}
+
+.Busqueda{
+    height: 25px;
+    width: 200px;
+    margin-right: 200px;
+    margin-top: 10px;
+    border-radius: 6px;
 }
 
 h1{
     font-size: 50px;
     text-align: center;
+    margin-top: 20px;
 }
 
 h2{
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
     margin-top: 60px;
+    margin-bottom: 30px;
 }
 
 h3{
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -69,29 +84,59 @@ p{
 
 .jedi-main article{
     text-align: center;
+    font-size: 20px;
 }
 
-.Productos-Jedi{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-}
-
-.Producto1, .Producto2, .Producto3{
-    margin: 30px;
+.desplegable{
+    width: 60px;
+    height: 30px;
+    background: #fff;
+    border: none;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 6px;
 }
 
 .botonDecoracion{
-    width: 80px;
+    width: 80px;    
     height: 40px;
     background: #fff;
     border: none;
     text-decoration: none;
     overflow: hidden;
-    margin-left: 30px;
     border-radius: 6px;
     cursor: pointer;
-    box-shadow: 0 0 10px #286fe1, 0 0 40px #286fe1, 0 0 80px #286fe1;
+    transition: all .3s ease-in;
+}
+
+.botonDecoracion:hover{
+    box-shadow: 0 0 10px #990b4d, 0 0 40px #990b4d, 0 0 80px #990b4d;
+}
+
+.compraFinal{
+    display: flex;
+    justify-content: center;
+}   
+
+.Productos{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.Producto1, .Producto2, .Producto3, .Producto4, .Producto5, .Producto6{
+    margin: 30px;
+}
+
+.Sith-main article{
+    text-align: center;
+    font-size: 20px;
+}
+
+.Producto1 p, .Producto2 p, .Producto3 p, .Producto4 p , .Producto5 p, .Producto6 p{
+    text-align: center;
 }
 
 .Producto1 img{
@@ -130,56 +175,6 @@ p{
     border: none;
 }
 
-.Sith{
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-.Sith img{
-    width: 700px;
-    height: 400px;
-    background-image: url('../img/Siths.jpg');
-    background-size: 100% 400px;
-    background-repeat: no-repeat;
-    margin-top: 20px;
-    overflow: hidden;
-    border: none;
-}
-
-.Sith-main article{
-    text-align: center;
-}
-
-.Productos-Sith{
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-}
-
-.Producto4, .Producto5, .Producto6{
-    margin: 20px;
-}
-
-.botonDecoracion{
-    width: 80px;
-    height: 40px;
-    background: #fff;
-    border: none;
-    text-decoration: none;
-    overflow: hidden;
-    margin-left: 30px;
-    border-radius: 6px;
-    cursor: pointer;
-    box-shadow: 0 0 10px #286fe1, 0 0 40px #286fe1, 0 0 80px #286fe1;
-}
-
-.Producto1 p, .Producto2 p, .Producto3 p{
-    text-align: center;
-}
-
-
 .Producto4 img{
     margin: 20px;
     width: 100px;
@@ -216,9 +211,35 @@ p{
     border: none;
 }
 
-#carrito{
+.final{
     margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 18px;
     text-align: center;
+}
+
+.mostrarTotal{
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center; 
+    color: white;
+    text-decoration:none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.mostrarTotal2{
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center; 
+    color: white;
+    text-decoration:underline;
+    margin-top: 15px;
+    cursor: pointer;
 }
 
 .grid-container{
@@ -236,7 +257,7 @@ p{
     background-size: 50px 50px;
     background-position-x: center;
     background-position-y: center;
-    border-radius: 20%;
+    border-radius: 100%;
     background-repeat: no-repeat;
     padding: 30px;
     margin: 20px;
@@ -248,7 +269,7 @@ p{
     background-size: 50px 50px;
     background-position-x: center;
     background-position-y: center;
-    border-radius: 20%;
+    border-radius: 100%;
     background-repeat: no-repeat;
     padding: 30px;
     margin: 20px;
@@ -260,7 +281,7 @@ p{
     background-size: 50px 50px;
     background-position-x: center;
     background-position-y: center;
-    border-radius: 20%;
+    border-radius: 100%;
     background-repeat: no-repeat;
     padding: 30px;
     margin: 20px;
