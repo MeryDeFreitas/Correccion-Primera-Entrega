@@ -1,2 +1,2 @@
-# Correccion-Primera-Entrega
-Correccion Primera Entrega
+# Segunda Entrega
+Aqui se hizo las correcciones de la primera entrega, ya tiene los eventos agregados
