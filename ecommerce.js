@@ -44,27 +44,21 @@ let Quigon = document.getElementById('funkoQuin')
 let Luke = document.getElementById('funkoLuke')
 let Ahsoka = document.getElementById('funkoAhsoka')
 
-let cantidadVendidaQuigon = document.getElementById('cantidadVendidaQuigon')
 let carritoQuigon = document.getElementById('carritoQuigon')
-let cantidadVendidaLuke = document.getElementById('cantidadVendidaLuke')
 let carritoLuke = document.getElementById('carritoLuke')
-let cantidadVendidaAhsoka = document.getElementById('cantidadVendidaAhsoka')
 let carritoAhsoka = document.getElementById('carritoAhsoka')
-
-let carritoFinal = document.getElementById('carritoFinal')
-let mostrarTotal = document.getElementById('mostrarTotal')
-let mostrarTotal2 = document.getElementById('mostrarTotal2')
 
 let Sidious = document.getElementById('funkoSidious')
 let Vader = document.getElementById('funkoVader')
 let Maul = document.getElementById('funkoMaul')
 
-let cantidadVendidaSidious = document.getElementById('cantidadVendidaSidious')
 let carritoSidious = document.getElementById('carritoSidious')
-let cantidadVendidaVader = document.getElementById('cantidadVendidaVader')
 let carritoVader = document.getElementById('carritoVader')
-let cantidadVendidaMaul = document.getElementById('cantidadVendidaMaul')
 let carritoMaul = document.getElementById('carritoMaul')
+
+let carritoFinal = document.getElementById('carritoFinal')
+let mostrarTotal = document.getElementById('mostrarTotal')
+let mostrarTotal2 = document.getElementById('mostrarTotal2')
 
 // Declaro variables globales que se usarán en las funciones
 
@@ -118,8 +112,9 @@ function ventaQuigon(){
 
     carritoSuma.push(new carrito(ventaQuigon.nombre, ventaQuigon.precio, ventaQuigon.unidades));
 
-    cantidadVendidaQuigon.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
-    carritoQuigon.innerHTML = ("A pagar por este producto: $" + ventaFinalQuigon)
+    carritoQuigon.innerHTML = ("Funko Quigon, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalQuigon)
+    ventaTotal()
+    console.log(nuevoStockQuin)
 }}
 
 Luke.addEventListener('click',ventaLuke)
@@ -143,8 +138,9 @@ function ventaLuke(){
         
     carritoSuma.push(new carrito(ventaLuke.nombre, ventaLuke.precio, ventaLuke.unidades));
 
-    cantidadVendidaLuke.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
-    carritoLuke.innerHTML = ("A pagar por este producto: $" + ventaFinalLuke)
+    carritoLuke.innerHTML = ("Funko Luke, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalLuke)
+    ventaTotal()
+    console.log(nuevoStockLuke)
 }}
 
 Ahsoka.addEventListener('click', ventaAhsoka)
@@ -167,8 +163,9 @@ function ventaAhsoka(){
         
     carritoSuma.push(new carrito(ventaAhsoka.nombre, ventaAhsoka.precio, ventaAhsoka.unidades));
 
-    cantidadVendidaAhsoka.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
-    carritoAhsoka.innerHTML = ("A pagar por este producto: $" + ventaFinalAhsoka)
+    carritoAhsoka.innerHTML = ("Funko Ahsoka, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalAhsoka)
+    ventaTotal()
+    console.log(nuevoStockAhsoka)
     } 
 }
 
@@ -192,8 +189,9 @@ function ventaSidious(){
         
     carritoSuma.push(new carrito(ventaSidious.nombre, ventaSidious.precio, ventaSidious.unidades));
 
-    cantidadVendidaSidious.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
-    carritoSidious.innerHTML = ("A pagar por este producto: $" + ventaFinalSidious)
+    carritoSidious.innerHTML = ("Funko Darth Sidious, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalSidious)
+    ventaTotal()
+    console.log(nuevoStockSidious)
     }
 }
 
@@ -217,8 +215,9 @@ function ventaVader(){
         
     carritoSuma.push(new carrito(ventaVader.nombre, ventaVader.precio, ventaVader.unidades));
 
-    cantidadVendidaVader.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
-    carritoVader.innerHTML = ("A pagar por este producto: $" + ventaFinalVader)
+    carritoVader.innerHTML = ("Funko Darth Vader, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalVader)
+    ventaTotal()
+    console.log(nuevoStockVader)
     }
 }
 
@@ -242,8 +241,9 @@ function ventaMaul(){
         
     carritoSuma.push(new carrito(ventaMaul.nombre, ventaMaul.precio, ventaMaul.unidades));
 
-    cantidadVendidaMaul.innerHTML = ("Unidades adquiridas " + cantidadSeleccionada)
-    carritoMaul.innerHTML = ("A pagar por este producto: $" + ventaFinalMaul)
+    carritoMaul.innerHTML = ("Funko Darth Maul, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalMaul)
+    ventaTotal()
+    console.log(nuevoStockMaul)
     }
 }
 
@@ -251,15 +251,13 @@ function ventaMaul(){
 
 // console.log(carritoSuma)
 
-carritoFinal.addEventListener('click',ventaTotal)
-
 function ventaTotal(){
     let sum = 0;
     for (var i = 0; i < carritoSuma.length; i ++){
         sum += carritoSuma[i].precio
     }
-    console.log(sum);
-    mostrarTotal.innerHTML = ("Total a pagar es de $" + sum )
+    // console.log(sum);
+    mostrarTotal.innerHTML = ("Total a pagar por su compra es de $" + sum )
     mostrarTotal2.innerHTML = ("Haga click aqui para continuar con el pago")
 }
 
