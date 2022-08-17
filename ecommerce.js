@@ -247,9 +247,9 @@ function ventaMaul(){
     }
 }
 
-// Muestro lo que lleva el carrito agregado
-
 // console.log(carritoSuma)
+
+// Sumo y muestro lo que lleva el carrito agregado, subtotales y total a pagar
 
 function ventaTotal(){
     let sum = 0;
@@ -263,7 +263,36 @@ function ventaTotal(){
 
 //filtro por precio
 
+let Producto1 = document.getElementById('Producto1')
+let Producto2 = document.getElementById('Producto2')
+let Producto3 = document.getElementById('Producto3')
+let Producto4 = document.getElementById('Producto4')
+let Producto5 = document.getElementById('Producto5')
+let Producto6 = document.getElementById('Producto6')
 
+const rango = document.getElementById('Rango')
+
+rango.onchange = () => {
+    let precio = rango.value
+    MostrarRango.innerHTML = rango.value
+    console.log(precio)
+    if (precio <=20) {
+        Producto2.classList.add('FiltroDesaparecer')
+        Producto3.classList.add('FiltroDesaparecer')
+        Producto5.classList.add('FiltroDesaparecer')
+        Producto6.classList.add('FiltroDesaparecer')
+      } else if (precio > 20 && precio < 50){
+        Producto2.classList.add('FiltroDesaparecer')
+        Producto1.classList.add('FiltroDesaparecer')
+        Producto5.classList.add('FiltroDesaparecer')
+        Producto4.classList.add('FiltroDesaparecer')
+      } else if(precio = 50){
+        Producto1.classList.add('FiltroDesaparecer')
+        Producto3.classList.add('FiltroDesaparecer')
+        Producto4.classList.add('FiltroDesaparecer')
+        Producto6.classList.add('FiltroDesaparecer')
+      }
+}
 
 // Busqueda sencilla
 
@@ -282,18 +311,5 @@ function buscar(e){
     }
 }
 
-// Login
-
-const $btnSignIn= document.querySelector('.sign-in-btn'),
-      $btnSignUp = document.querySelector('.sign-up-btn'),  
-      $signUp = document.querySelector('.sign-up'),
-      $signIn  = document.querySelector('.sign-in');
-
-document.addEventListener('click', e => {
-    if (e.target === $btnSignIn || e.target === $btnSignUp) {
-        $signIn.classList.toggle('active');
-        $signUp.classList.toggle('active')
-    }
-});
 
 // Falta usar localstorage
