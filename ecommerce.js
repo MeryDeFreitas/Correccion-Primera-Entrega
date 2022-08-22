@@ -296,18 +296,69 @@ rango.onchange = () => {
 
 // Busqueda sencilla
 
+let Introduccion = document.getElementById('Introduccion')
+let Introduccion2 = document.getElementById('Introduccion2')
+let Introduccion3 = document.getElementById('Introduccion3')
+let Introduccion4 = document.getElementById('Introduccion4')
+let Introduccion5 = document.getElementById('Introduccion5')
+let FiltroPrecioTitulo = document.getElementById('FiltroPrecioTitulo')
+let FiltroPrecio = document.getElementById('FiltroPrecio')
+let CambioTitulo = document.getElementById('CambioTitulo')
+
 const busqueda = document.getElementById("Busqueda")
 busqueda.addEventListener('keypress', buscar)
 
 function buscar(e){
     if(e.keyCode === 13){
         let buscar = document.getElementById('Busqueda').value;
-        if(buscar == "Quigon" || buscar == "Luke" || buscar == "Ahsoka" || buscar == "Sidious" || buscar == "Vader" || buscar =="Maul"){
-            alert("Tenemos el producto")
-        } else {
+        Introduccion.classList.add('FiltroDesaparecer')
+        Introduccion2.classList.add('FiltroDesaparecer')
+        Introduccion3.classList.add('FiltroDesaparecer')
+        Introduccion4.classList.add('FiltroDesaparecer')
+        Introduccion5.classList.add('FiltroDesaparecer')
+        FiltroPrecioTitulo.classList.add('FiltroDesaparecer')
+        FiltroPrecio.classList.add('FiltroDesaparecer')
+        CambioTitulo.innerHTML = ("Aqui esta el producto que buscabas: ")
+        if(buscar == "Quigon"){
+            Producto2.classList.add('FiltroDesaparecer')
+            Producto3.classList.add('FiltroDesaparecer')
+            Producto4.classList.add('FiltroDesaparecer')
+            Producto5.classList.add('FiltroDesaparecer')
+            Producto6.classList.add('FiltroDesaparecer')
+        } else if (buscar == "Luke"){
+            Producto1.classList.add('FiltroDesaparecer')
+            Producto3.classList.add('FiltroDesaparecer')
+            Producto4.classList.add('FiltroDesaparecer')
+            Producto5.classList.add('FiltroDesaparecer')
+            Producto6.classList.add('FiltroDesaparecer')
+        } else if(buscar == "Ahsoka"){
+            Producto1.classList.add('FiltroDesaparecer')
+            Producto2.classList.add('FiltroDesaparecer')
+            Producto4.classList.add('FiltroDesaparecer')
+            Producto5.classList.add('FiltroDesaparecer')
+            Producto6.classList.add('FiltroDesaparecer')
+        } else if (buscar == "Sidious"){
+            Producto1.classList.add('FiltroDesaparecer')
+            Producto2.classList.add('FiltroDesaparecer')
+            Producto3.classList.add('FiltroDesaparecer')
+            Producto5.classList.add('FiltroDesaparecer')
+            Producto6.classList.add('FiltroDesaparecer')
+        } else if (buscar == "Vader"){
+            Producto1.classList.add('FiltroDesaparecer')
+            Producto2.classList.add('FiltroDesaparecer')
+            Producto3.classList.add('FiltroDesaparecer')
+            Producto4.classList.add('FiltroDesaparecer')
+            Producto6.classList.add('FiltroDesaparecer')
+        }else if (buscar == "Maul"){
+            Producto1.classList.add('FiltroDesaparecer')
+            Producto2.classList.add('FiltroDesaparecer')
+            Producto3.classList.add('FiltroDesaparecer')
+            Producto4.classList.add('FiltroDesaparecer')
+            Producto5.classList.add('FiltroDesaparecer')
+        }else {
             alert ("Producto no disponible")
         }
-        console.log(buscar)
+        // Aqui puedo agregar un boton de refrescar
     }
 }
 
