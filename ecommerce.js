@@ -113,7 +113,13 @@ function ventaQuigon(){
     carritoSuma.push(new carrito(ventaQuigon.nombre, ventaQuigon.precio, ventaQuigon.unidades));
 
     carritoQuigon.innerHTML = ("Funko Quigon, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalQuigon)
+
+    // Para sumar al carrito
     ventaTotal()
+
+    // Guardar datos
+    localStorage.setItem("Venta Quigon", ventaFinalQuigon);
+
     console.log(nuevoStockQuin)
 }}
 
@@ -139,7 +145,13 @@ function ventaLuke(){
     carritoSuma.push(new carrito(ventaLuke.nombre, ventaLuke.precio, ventaLuke.unidades));
 
     carritoLuke.innerHTML = ("Funko Luke, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalLuke)
+    
+    // Para sumar al carrito
     ventaTotal()
+
+    // Guardar datos
+    localStorage.setItem("Venta Luke", ventaFinalLuke);
+
     console.log(nuevoStockLuke)
 }}
 
@@ -164,7 +176,13 @@ function ventaAhsoka(){
     carritoSuma.push(new carrito(ventaAhsoka.nombre, ventaAhsoka.precio, ventaAhsoka.unidades));
 
     carritoAhsoka.innerHTML = ("Funko Ahsoka, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalAhsoka)
+    
+    // Para sumar al carrito
     ventaTotal()
+
+    // Guardar datos
+    localStorage.setItem("Venta Ahsoka", ventaFinalAhsoka);
+    
     console.log(nuevoStockAhsoka)
     } 
 }
@@ -190,7 +208,13 @@ function ventaSidious(){
     carritoSuma.push(new carrito(ventaSidious.nombre, ventaSidious.precio, ventaSidious.unidades));
 
     carritoSidious.innerHTML = ("Funko Darth Sidious, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalSidious)
+
+    // Para sumar al carrito
     ventaTotal()
+
+    // Guardar datos
+    localStorage.setItem("Venta Sidious", ventaFinalSidious);
+
     console.log(nuevoStockSidious)
     }
 }
@@ -216,7 +240,13 @@ function ventaVader(){
     carritoSuma.push(new carrito(ventaVader.nombre, ventaVader.precio, ventaVader.unidades));
 
     carritoVader.innerHTML = ("Funko Darth Vader, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalVader)
+    
+    // Para sumar al carrito
     ventaTotal()
+
+    // Guardar datos
+    localStorage.setItem("Venta Vader", ventaFinalVader);
+    
     console.log(nuevoStockVader)
     }
 }
@@ -242,7 +272,13 @@ function ventaMaul(){
     carritoSuma.push(new carrito(ventaMaul.nombre, ventaMaul.precio, ventaMaul.unidades));
 
     carritoMaul.innerHTML = ("Funko Darth Maul, unidades: " + cantidadSeleccionada +" , total: $" +ventaFinalMaul)
+
+    // Para sumar al carrito
     ventaTotal()
+
+    // Guardar datos
+    localStorage.setItem("Venta Maul", ventaFinalMaul);
+    
     console.log(nuevoStockMaul)
     }
 }
@@ -358,9 +394,5 @@ function buscar(e){
         }else {
             alert ("Producto no disponible")
         }
-        // Aqui puedo agregar un boton de refrescar
     }
 }
-
-
-// Falta usar localstorage
