@@ -40,7 +40,7 @@ body {
     padding: 1rem 0;
 }
 
-.message button {
+.bottonEnvio {
     padding: 1rem;
     font-weight: 400;
     background-color: #38041c;
@@ -54,7 +54,7 @@ body {
     color: #fff;
 }
 
-.message button:hover {
+.bottonEnvio:hover {
     background-color: #38041c;
     box-shadow: 0 0 10px #990b4d, 0 0 40px #990b4d, 0 0 80px #990b4d;
 }
